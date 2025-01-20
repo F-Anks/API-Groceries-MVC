@@ -1,15 +1,22 @@
 {
   "name": "api-groseries-mvc",
   "version": "1.0.0",
-  "description": "",
+  "description": "API Groceries MVC es una API desarrollada con Node.js y MongoDB, diseñada bajo el patrón de arquitectura MVC (Modelo-Vista-Controlador). Tiene como objetivo gestionar una base de datos para una aplicación de lista de compras.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/F-Anks/API-Groceries-MVC"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Francisco Garcia Garcia",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/F-Anks/API-Groceries-MVC/issues"
+  },
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
