@@ -2,7 +2,7 @@ import productsDAO from "../dao/products.dao.js";
 import Product from "../models/Product.js";
 const productsController={};
 
-productsController.getAll=(req, res)=>{
+productsController.getAll = (req, res) => {
     //request is here from al DAO
     productsDAO.getAll()
     .then((products)=>{
@@ -20,7 +20,7 @@ productsController.getAll=(req, res)=>{
 
 };
 
-productsController.getOne=(req,res)=>{
+productsController.getOne = (req,res) => {
     productsDAO.getOne(req.params.barcode)
     .then((Product)=>{
         if(Product != null)
@@ -35,7 +35,7 @@ productsController.getOne=(req,res)=>{
             });
     })
 
-    .catch((error)=>{
+    .catch((error) => {
         res.json({
             data:{
                 message: error,
@@ -43,4 +43,25 @@ productsController.getOne=(req,res)=>{
         });
     })
 };
+
+productsController.insert = (req, res) => {
+    productsDAO.insert(req.body)
+    .then((res) => {
+        res.json({
+            data:{
+                message: "Product inserted sucessfully",
+                product: response
+            }
+        })
+    })
+
+    .catch((error) => {
+        res.json({
+            data:{
+                message: error
+            }
+        })
+    });
+};
+
 export default productsController;

@@ -1,7 +1,7 @@
 import {model, Schema} from "mongoose";
 
 const productSchema = new Schema({
-    Barcode:{
+    barcode:{
         require: true,
         unique: true,
         type: String
