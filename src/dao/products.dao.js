@@ -1,16 +1,20 @@
-import Product from "../models/Product.js"
-const productsDAO={};
+import Product from '../models/Product.js';
 
-productsDAO.getAll=async()=>{
+const productDao = {};
+productDao.getAll = async () => {
     return await Product.find();
-};
-
-productsDAO.getOne=async(barcode)=>{
-    return await Product.findOne({Barcode: barcode});
-};
-
-productsDAO.insert=async(product)=>{
+}
+productDao.getOne = async (barcode) => {
+    return await Product.findOne({ barcode: barcode });
+}
+productDao.insert = async (product) => {
     return await Product.create(product);
-};
+}
+productDao.updateOne = async (product,barcode) => {
+    return await Product.findOneAndUpdate({ barcode: barcode }, product);	
+}
+productDao.deleteOne = async (barcode) => {
+    return await Product.findOneAndDelete({barcode: barcode});
+}
 
-export default productsDAO;
+export default productDao;

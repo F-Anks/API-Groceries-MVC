@@ -7,7 +7,7 @@ const productSchema = new Schema({
         type: String
     },
     description: String,
-    brand: Number,
+    brand: String,
     price: Number,
     cost: Number,
     expired_date: String,
